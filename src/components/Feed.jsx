@@ -11,11 +11,11 @@ export default function Feed() {
 
   return (
     <div style={styles.contentPage}>
-      <h2 style={styles.pageTitle}>🐛 무엇을 언제 얼마나 줘야 할까요?</h2>
+      <h2 style={styles.pageTitle}>무엇을 언제 얼마나 줘야 할까요?</h2>
       
       <div style={styles.containerLayout}>
         <aside style={styles.sidebar}>
-          <div style={styles.sidebarHeader}>🦎 도마뱀 식단 목록</div>
+          <div style={styles.sidebarHeader}>🦎 도마뱀 목록</div>
           <ul style={styles.listContainer}>
             {sortedKeys.map((key) => (
               <li 

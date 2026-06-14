@@ -11,11 +11,11 @@ export default function Info() {
 
   return (
     <div style={styles.contentPage}>
-      <h2 style={styles.pageTitle}>🏠 도마뱀별 사육 환경 가이드</h2>
+      <h2 style={styles.pageTitle}>사육 환경 가이드</h2>
       
       <div style={styles.containerLayout}>
         <aside style={styles.sidebar}>
-          <div style={styles.sidebarHeader}>🦎 도마뱀 종류 목록</div>
+          <div style={styles.sidebarHeader}>🦎 도마뱀 목록</div>
           <ul style={styles.listContainer}>
             {sortedKeys.map((key) => (
               <li 
