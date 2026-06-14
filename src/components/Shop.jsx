@@ -4,8 +4,8 @@ import { SHOP_DATA } from '../data/LizardData';
 export default function Shop() {
   return (
     <div style={styles.contentPage}>
-      <h2 style={styles.pageTitle}>🛒 추천 파충류 샵 특징 및 링크</h2>
-      <p style={{color: '#666', marginBottom: '20px'}}>초보자분들이 안심하고 이용할 수 있는 메이저 샵들의 특징 요약입니다.</p>
+      <h2 style={styles.pageTitle}>🛒 추천 파충류 샵 링크</h2>
+      <p style={{color: '#666', marginBottom: '20px'}}>초보자분들이 안심하고 이용할 수 있는 메이저 샵</p>
       <div style={styles.shopGrid}>
         {SHOP_DATA.map((shop, idx) => (
           <div key={idx} style={styles.shopCard}>
