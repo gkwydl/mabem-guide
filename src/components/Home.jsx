@@ -5,7 +5,7 @@ import BannerLizardImg from '../assets/gallery/lzd1.jpeg';
 export default function Home() {
     return (
         <div>
-            <div style={styles.banner}>
+            <div style={styles.banner} className="responsive-banner">
                 <div style={styles.bannerText}>
                     <h1 style={styles.bannerTitle}>멋진 파충류 친구를 구경해보세요!</h1>
                     <p style={styles.bannerDesc}>도마뱀 보면서 힐링하세요.</p>
@@ -37,7 +37,7 @@ const styles = {
     bannerCircleWrapper: { width: '240px', height: '240px', borderRadius: '50%', overflow: 'hidden', border: '5px solid #fff', flexShrink: 0 },
     bannerCircleImg: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' },
     sectionHeading: { fontSize: '1.4rem', color: '#4e4340', margin: '40px 0 20px 0' },
-    galleryGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '25px', marginBottom: '50px' },
+    galleryGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '25px', marginBottom: '50px' },
     galleryCard: { backgroundColor: '#fff', borderRadius: '15px', overflow: 'hidden', boxShadow: '0 4px 15px rgba(0,0,0,0.04)', border: '1px solid #f0eade' },
     cardImgWrapper: { height: '220px', overflow: 'hidden' },
     cardImg: { width: '100%', height: '100%', objectFit: 'cover' },

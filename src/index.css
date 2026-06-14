@@ -109,3 +109,62 @@ code {
   padding: 4px 8px;
   background: var(--code-bg);
 }
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column !important;
+    gap: 15px !important;
+    padding: 15px 4% !important;
+  }
+  nav > div {
+    font-size: 1.3rem !important;
+  }
+  nav > div + div {
+    gap: 15px !important;
+  }
+
+  main {
+    width: 92% !important;
+    padding: 20px 0 40px 0 !important;
+  }
+
+  .responsive-banner {
+    flex-direction: column-reverse !important;
+    text-align: center !important;
+    padding: 30px 20px !important;
+    gap: 20px !important;
+  }
+  .responsive-banner h1 {
+    font-size: 1.5rem !important;
+  }
+  .responsive-banner p {
+    max-width: 100% !important;
+    font-size: 0.9rem !important;
+  }
+  .responsive-banner div {
+    width: 160px !important;
+    height: 160px !important;
+  }
+
+  .responsive-layout {
+    flex-direction: column !important;
+    gap: 20px !important;
+  }
+  .responsive-sidebar {
+    width: 100% !important;
+    min-width: 100% !important;
+  }
+  .responsive-sidebar ul {
+    max-height: 180px !important;
+  }
+  .responsive-details {
+    padding-left: 0 !important;
+  }
+  .responsive-details h3 {
+    font-size: 1.4rem !important;
+  }
+
+  .responsive-page {
+    padding: 20px !important;
+  }
+}

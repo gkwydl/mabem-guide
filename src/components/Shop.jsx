@@ -3,7 +3,7 @@ import { SHOP_DATA } from '../data/LizardData';
 
 export default function Shop() {
   return (
-    <div style={styles.contentPage}>
+    <div style={styles.contentPage} className="responsive-page">
       <h2 style={styles.pageTitle}>🛒 추천 파충류 샵 링크</h2>
       <p style={{color: '#666', marginBottom: '20px'}}>초보자분들이 안심하고 이용할 수 있는 메이저 샵</p>
       <div style={styles.shopGrid}>
@@ -25,7 +25,7 @@ export default function Shop() {
 const styles = {
   contentPage: { backgroundColor: '#fff', padding: '40px', borderRadius: '20px', boxShadow: '0 4px 20px rgba(0,0,0,0.02)', border: '1px solid #f0eade' },
   pageTitle: { margin: '0 0 25px 0', color: '#4e4340' },
-  shopGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '25px' },
+  shopGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '25px' },
   shopCard: { backgroundColor: '#fffdfa', border: '1px solid #f0eade', padding: '25px', borderRadius: '15px', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' },
   tagWrapper: { display: 'flex', gap: '6px', flexWrap: 'wrap', marginTop: '10px' },
   shopTag: { fontSize: '0.75rem', backgroundColor: '#99f9f9', color: '#4e4340', padding: '4px 8px', borderRadius: '5px', fontWeight: 'bold' },
