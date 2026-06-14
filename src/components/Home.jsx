@@ -30,7 +30,7 @@ export default function Home() {
 }
 
 const styles = {
-  banner: { backgroundColor: '#99f9f9', borderRadius: '20px', padding: '40px 50px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', overflow: 'hidden' },
+  banner: { backgroundColor: '#c1ffff', borderRadius: '20px', padding: '40px 50px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', overflow: 'hidden' },
   bannerText: { flex: 1 },
   bannerTitle: { fontSize: '2rem', margin: 0, color: '#4e4340', fontWeight: '800' },
   bannerDesc: { margin: '15px 0 25px 0', fontSize: '1rem', color: '#4e4340', opacity: 0.85, maxWidth: '500px', lineHeight: '1.5' },
