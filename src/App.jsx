@@ -1,122 +1,56 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import heroImg from './assets/hero.png'
-import './App.css'
+import React, { useState } from 'react';
+import Home from './components/Home';
+import Info from './components/Info';
+import Feed from './components/Feed';
+import Shop from './components/Shop';
 
-function App() {
-  const [count, setCount] = useState(0)
+export default function App() {
+  const [currentTab, setCurrentTab] = useState('home');
+
+  const renderContent = () => {
+    switch (currentTab) {
+      case 'home': return <Home />;
+      case 'info': return <Info />;
+      case 'feed': return <Feed />;
+      case 'shop': return <Shop />;
+      default: return <Home />;
+    }
+  };
 
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
+    <div style={styles.appContainer}>
+      <nav style={styles.navbar}>
+        <div style={styles.navLogo} onClick={() => setCurrentTab('home')}>Mabem Guide</div>
+        <div style={styles.navMenu}>
+          <button style={{...styles.navLink, ...(currentTab === 'home' ? styles.activeNavLink : {})}} onClick={() => setCurrentTab('home')}>홈</button>
+          <button style={{...styles.navLink, ...(currentTab === 'info' ? styles.activeNavLink : {})}} onClick={() => setCurrentTab('info')}>사육 정보</button>
+          <button style={{...styles.navLink, ...(currentTab === 'feed' ? styles.activeNavLink : {})}} onClick={() => setCurrentTab('feed')}>먹이 정보</button>
+          <button style={{...styles.navLink, ...(currentTab === 'shop' ? styles.activeNavLink : {})}} onClick={() => setCurrentTab('shop')}>상점</button>
         </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
+      </nav>
 
-      <div className="ticks"></div>
+      <main style={styles.main}>
+        {renderContent()}
+      </main>
 
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
-  )
+      <footer style={styles.footer}>
+        <div style={styles.footerLogo}>Mabem Guide</div>
+        <p style={styles.copy}>© 2026 Mabem Guide. 전문가의 파충류 케어 가이드.</p>
+      </footer>
+    </div>
+  );
 }
 
-export default App
+const styles = {
+  appContainer: { fontFamily: '"Noto Sans KR", sans-serif', backgroundColor: '#fffdfb', color: '#272727', minHeight: '100vh', display: 'flex', flexDirection: 'column' },
+  navbar: { display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '20px 8%', backgroundColor: '#fff', borderBottom: '1px solid #f0edf9' },
+  navLogo: { fontSize: '1.5rem', fontWeight: 'bold', color: '#4e4340', cursor: 'pointer' },
+  navMenu: { display: 'flex', gap: '25px' },
+  navLink: { border: 'none', backgroundColor: 'transparent', fontSize: '1rem', color: '#666', cursor: 'pointer', fontWeight: '500', paddingBottom: '4px' },
+  activeNavLink: { color: '#4e4340', borderBottom: '2px solid #4e4340', fontWeight: 'bold' },
+  main: { flex: 1, width: '84%', margin: '0 auto', padding: '40px 0 80px 0' },
+  footer: { backgroundColor: '#f5f0eb', padding: '40px 0', textAlign: 'center', borderTop: '1px dashed #dcd5cc' },
+  footerLogo: { fontSize: '1.2rem', fontWeight: 'bold', color: '#4e4340', marginBottom: '10px' },
+  footerLinks: { fontSize: '0.85rem', color: '#777', marginBottom: '15px' },
+  copy: { margin: 0, fontSize: '0.8rem', color: '#999' }
+};
