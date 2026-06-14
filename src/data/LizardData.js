@@ -275,13 +275,6 @@ export const SHOP_DATA = [
 
 const images = import.meta.glob('../assets/gallery/ld*.jpeg', { eager: true });
 
-export const GALLERY_DATA = Array.from({ length: 29 }, (_, i) => {
-    const photoIndex = i + 1;
-    const path = `../assets/gallery/ld${photoIndex}.jpeg`;
-    return {
-        id: photoIndex,
-        title: `도마뱀 친구 ${photoIndex}호`,
-        author: `집사${photoIndex}`,
-        img: images[path] ? images[path].default : 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500'
-    };
-});
+export const GALLERY_DATA = Object.entries(images).map(([_, mod], i) => ({
+  img: mod.default
+}));
