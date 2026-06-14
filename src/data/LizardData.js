@@ -269,8 +269,9 @@ export const LIZARD_DATA = {
 
 // ── 에러 방지용 하단 고정 데이터 ──
 export const SHOP_DATA = [
-  { name: '더 쥬 (The Zoo)', tags: ['오프라인 매장', '다양한 생물'], desc: '국내 최대 규모 파충류 샵.', url: 'http://thezoo.co.kr/' },
-  { name: '줄스 (Jools)', tags: ['빠른 배송', '사료 전문'], desc: '용품 및 슈퍼푸드 라인업 탄탄.', url: 'https://zools.co.kr/' }
+  { name: '더 쥬 (The Zoo)', tags: ['오프라인 매장', '분양 가능'], desc: '파충류 용품 및 사료 사이트', url: 'https://더쥬.com' },
+  { name: '곤충하모니', tags: ['오프라인 매장', '분양 가능'], desc: '유튜버 정브르가 하는 파충류 용품 및 사료 사이트', url: 'https://곤충하모니.com' },
+  { name: '게코빌리지', tags: ['오프라인 매장', '분양 가능'], desc: '파충류 용품 및 사료 사이트', url: 'https://geckovillage.co.kr' }
 ];
 
 export const GALLERY_DATA = [
