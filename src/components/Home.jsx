@@ -30,11 +30,11 @@ export default function Home() {
 }
 
 const styles = {
-    banner: { backgroundColor: '#c1ffff', borderRadius: '20px', padding: '40px 50px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '5px', overflow: 'hidden' },
+    banner: { backgroundColor: '#c1ffff', borderRadius: '20px', padding: '30px', display: 'flex', gap: '20px', flexWrap: 'wrap', alignItems: 'center', marginBottom: '5px', overflow: 'hidden' }, 
     bannerText: { flex: 1 },
     bannerTitle: { fontSize: '2rem', margin: 0, color: '#4e4340', fontWeight: '800' },
     bannerDesc: { margin: '15px 0 0 0', fontSize: '1rem', color: '#4e4340', opacity: 0.85, maxWidth: '500px', lineHeight: '1.5' },
-    bannerCircleWrapper: { width: '240px', height: '240px', borderRadius: '50%', overflow: 'hidden', border: '5px solid #fff', flexShrink: 0 },
+    bannerCircleWrapper: { width: '200px', height: '200px', borderRadius: '50%', overflow: 'hidden', border: '5px solid #fff', flexShrink: 0, margin: '0 auto' }, 
     bannerCircleImg: { width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center 15%' },
     sectionHeading: { fontSize: '1.4rem', color: '#4e4340', margin: '40px 0 20px 0' },
     galleryGrid: { display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '25px', marginBottom: '50px' },
