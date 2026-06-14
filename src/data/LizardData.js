@@ -194,7 +194,7 @@ export const LIZARD_DATA = {
     feed: [
       '성장기에는 엄청난 야의 곤충을 흡수하며, 성체 시 육식을 합니다.',
       '👶 어린 개체: 귀뚜라미와 대형 밀웜을 주 4~5회 급여합니다.',
-      '🦖 성체: 쥐(마우스), 냉동 메추리, 대형 로치 등을 주 1~2회 급여하되 비만율이 매우 높은 종이므로 식사량 조절이 생명입니다.'
+      '🦖 성체: 쥐(마우스), 냉동 메추리, 대형 로치 등을 주 1~2회 급여하되 비만율이 매우 높은 종이므로식사량 조절이 생명입니다.'
     ],
     feedtips: '먹이 반응이 극도로 흥분 상태가 되므로 손을 먹이로 착각하지 않도록 반드시 30cm 이상의 장핀셋으로 피딩해야 안전합니다.',
     description: '왕도마뱀(모니터) 종류 중 비교적 아담하고 순하게 길들여져 입문종으로 꼽히지만, 성체 시 무시무시한 덩치와 파괴력을 가지는 아프리카산 도마뱀입니다.',
@@ -267,14 +267,21 @@ export const LIZARD_DATA = {
   }
 };
 
-// ── 에러 방지용 하단 고정 데이터 ──
 export const SHOP_DATA = [
   { name: '더 쥬 (The Zoo)', tags: ['오프라인 매장', '분양 가능'], desc: '파충류 용품 및 사료 사이트', url: 'https://더쥬.com' },
   { name: '곤충하모니', tags: ['오프라인 매장', '분양 가능'], desc: '유튜버 정브르가 하는 파충류 용품 및 사료 사이트', url: 'https://곤충하모니.com' },
   { name: '게코빌리지', tags: ['오프라인 매장', '분양 가능'], desc: '파충류 용품 및 사료 사이트', url: 'https://geckovillage.co.kr' }
 ];
 
-export const GALLERY_DATA = [
-  { id: 1, title: '스타더스트 지기', author: 'reptile_king', img: 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500' },
-  { id: 2, title: '점박이 리오', author: 'gecko_lover', img: 'https://images.unsplash.com/photo-1500462969106-f0699e77328e?w=500' }
-];
+const images = import.meta.glob('../assets/gallery/ld*.jpeg', { eager: true });
+
+export const GALLERY_DATA = Array.from({ length: 29 }, (_, i) => {
+    const photoIndex = i + 1;
+    const path = `../assets/gallery/ld${photoIndex}.jpeg`;
+    return {
+        id: photoIndex,
+        title: `도마뱀 친구 ${photoIndex}호`,
+        author: `집사${photoIndex}`,
+        img: images[path] ? images[path].default : 'https://images.unsplash.com/photo-1504450758481-7338eba7524a?w=500'
+    };
+});
